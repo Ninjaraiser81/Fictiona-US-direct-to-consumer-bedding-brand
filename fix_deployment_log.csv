@@ -1,0 +1,8 @@
+fix_id,fix_name,status,deployed_at,target_prompt_families,intended_metrics,expected_horizon,notes
+F01,Entity and company-fact cleanup,live,2026-06-10,branded_overview|branded_trust,branded_presence_quality|factual_consistency,next audit,"Company facts, product naming and canonical organization references aligned."
+F02,Cooling Sheets Guide,live,2026-06-12,category_best|hot_sleepers|night_sweats|breathable_material,category_presence|owned_citation_rate,next audit,Question-led guide linked to the core cooling-sheet product page.
+F03,Cooling-brand comparison page,live,2026-06-16,material_comparison|brand_shortlist|branded_comparison,comparison_standing|recommendation_rate,one_to_two_audits,Published factual comparison criteria; did not add new third-party proof.
+F04,Product claim and evidence refresh,live,2026-06-18,branded_overview|branded_suitability|branded_trust,branded_presence_quality|recommendation_rate|owned_citation_rate,next audit,"Clarified supported cooling, care and suitability language on the product page."
+F05,Internal-linking and hub navigation,live,2026-06-20,all_non_branded,category_presence|owned_citation_rate,one_to_two_audits,"Connected guide, comparison page, care page and product page."
+F06,Independent expert-roundup outreach,not_live_at_month_2,2026-08-05,category_best|brand_shortlist|branded_trust,third_party_citation_rate|recommendation_rate,month_3_or_later,Publication occurred after the Month 2 audit window and cannot explain Month 2 movement.
+F07,Night-sweats FAQ expansion,partially_live,2026-07-06,night_sweats,category_presence|owned_citation_rate,month_3,Published near the end of the Month 2 audit window; treat Month 2 attribution as unsupported.

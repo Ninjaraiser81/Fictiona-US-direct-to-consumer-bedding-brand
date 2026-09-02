@@ -1,0 +1,6 @@
+brand_id,brand_name,brand_role,canonical_domain,aliases,positioning
+B001,AsterVale,target,astervale.example,AsterVale|Aster Vale|ASTERVALE|AsterVale(TM),Plant-based cooling sheets for hot sleepers
+B002,Serein Sleep,competitor,sereinsleep.example,Serein Sleep|Serein|SEREIN SLEEP,Premium clean-material bedding
+B003,ArcticLoom,competitor,arcticloom.example,ArcticLoom|Arctic Loom|ARCTICLOOM,Performance-led cooling technology
+B004,RestNest,competitor,restnest.example,RestNest|Rest Nest|RESTNEST,Value-focused direct-to-consumer bedding
+B005,Eucalune,competitor,eucalune.example,Eucalune|Euca Lune|EUCALUNE,Eucalyptus bedding with sustainability cues

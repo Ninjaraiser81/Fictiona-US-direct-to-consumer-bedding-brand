@@ -1,0 +1,65 @@
+prompt_id,prompt_text,prompt_family,brand_mode,intent_stage,comparison_eligible,fix_targeted_before_month_2,prompt_weight,locked_core_prompt
+P001,What are the best cooling sheets for hot sleepers?,category_best,non_branded,discovery,0,1,1.0,1
+P002,Which cooling bed sheets are worth buying in the US?,category_best,non_branded,discovery,0,1,1.0,1
+P003,Recommend high-quality sheets that stay cool overnight.,category_best,non_branded,discovery,0,1,1.0,1
+P004,What cooling sheet brands should I consider?,category_best,non_branded,discovery,0,1,1.0,1
+P005,Which sheets work best for people who sleep hot?,hot_sleepers,non_branded,discovery,0,1,1.0,1
+P006,Recommend bedding for a very hot sleeper.,hot_sleepers,non_branded,discovery,0,1,1.0,1
+P007,What sheets help reduce heat buildup at night?,hot_sleepers,non_branded,discovery,0,1,1.0,1
+P008,Which bed sheets feel coolest through the night?,hot_sleepers,non_branded,discovery,0,1,1.0,1
+P009,What sheets are best for night sweats?,night_sweats,non_branded,problem_solution,0,1,1.0,1
+P010,Recommend breathable sheets for someone waking up sweaty.,night_sweats,non_branded,problem_solution,0,1,1.0,1
+P011,Which sheet materials manage moisture during night sweats?,night_sweats,non_branded,problem_solution,0,1,1.0,1
+P012,What bedding should I buy for overheating and night sweats?,night_sweats,non_branded,problem_solution,0,1,1.0,1
+P013,What is the most breathable material for bed sheets?,breathable_material,non_branded,education,0,1,1.0,1
+P014,Which sheet fabrics release heat effectively?,breathable_material,non_branded,education,0,1,1.0,1
+P015,Are plant-based sheets breathable for summer?,breathable_material,non_branded,education,0,1,1.0,1
+P016,What materials should hot sleepers look for in sheets?,breathable_material,non_branded,education,0,1,1.0,1
+P017,"Compare eucalyptus, bamboo and cotton sheets for cooling.",material_comparison,non_branded,evaluation,1,1,1.0,1
+P018,Are eucalyptus sheets cooler than cotton percale?,material_comparison,non_branded,evaluation,1,1,1.0,1
+P019,Which is better for hot sleepers: bamboo or eucalyptus sheets?,material_comparison,non_branded,evaluation,1,1,1.0,1
+P020,Compare cooling sheet materials on comfort and care.,material_comparison,non_branded,evaluation,1,1,1.0,1
+P021,Shortlist five cooling sheet brands and rank them.,brand_shortlist,non_branded,evaluation,1,1,1.0,1
+P022,Compare the leading cooling sheet brands under $250.,brand_shortlist,non_branded,evaluation,1,1,1.0,1
+P023,Which cooling bedding brands are strongest overall?,brand_shortlist,non_branded,evaluation,1,1,1.0,1
+P024,Rank good direct-to-consumer cooling sheet options.,brand_shortlist,non_branded,evaluation,1,1,1.0,1
+P025,What are the best cooling sheets under $200 for a queen set?,value_under_200,non_branded,evaluation,0,0,1.0,1
+P026,Recommend premium-feeling cooling sheets below $200.,value_under_200,non_branded,evaluation,0,0,1.0,1
+P027,Which cooling sheets offer the best value?,value_under_200,non_branded,evaluation,0,0,1.0,1
+P028,What affordable cooling sheet sets are genuinely comfortable?,value_under_200,non_branded,evaluation,0,0,1.0,1
+P029,Recommend cooling sheets for sensitive skin.,sensitive_skin,non_branded,problem_solution,0,0,1.0,1
+P030,Which breathable sheets use gentler materials?,sensitive_skin,non_branded,problem_solution,0,0,1.0,1
+P031,What cooling bedding is suitable for easily irritated skin?,sensitive_skin,non_branded,problem_solution,0,0,1.0,1
+P032,Which sheets balance cooling and skin comfort?,sensitive_skin,non_branded,problem_solution,0,0,1.0,1
+P033,What are the best lower-impact cooling sheets?,eco_friendly,non_branded,evaluation,0,0,1.0,1
+P034,Recommend cooling sheets with credible sustainability evidence.,eco_friendly,non_branded,evaluation,0,0,1.0,1
+P035,Which plant-based sheets have clear environmental claims?,eco_friendly,non_branded,evaluation,0,0,1.0,1
+P036,What sustainable cooling bedding brands should I consider?,eco_friendly,non_branded,evaluation,0,0,1.0,1
+P037,Which sheets work for couples with different sleep temperatures?,couples_temperature,non_branded,problem_solution,0,0,1.0,1
+P038,Recommend sheets when one partner sleeps hot and the other does not.,couples_temperature,non_branded,problem_solution,0,0,1.0,1
+P039,What bedding balances cooling without feeling cold?,couples_temperature,non_branded,problem_solution,0,0,1.0,1
+P040,Which sheets are comfortable for mixed-temperature couples?,couples_temperature,non_branded,problem_solution,0,0,1.0,1
+P041,Which cooling sheets hold up well after repeated washing?,care_durability,non_branded,evaluation,0,0,1.0,1
+P042,Recommend cooling sheets that resist pilling.,care_durability,non_branded,evaluation,0,0,1.0,1
+P043,What cooling sheet materials are easiest to care for?,care_durability,non_branded,evaluation,0,0,1.0,1
+P044,Which breathable sheets balance softness and durability?,care_durability,non_branded,evaluation,0,0,1.0,1
+P045,Which cooling sheet set should I buy today?,purchase_decision,non_branded,purchase,0,0,1.0,1
+P046,Recommend one reliable cooling sheet option for a queen bed.,purchase_decision,non_branded,purchase,0,0,1.0,1
+P047,What should I check before buying cooling sheets online?,purchase_decision,non_branded,purchase,0,0,1.0,1
+P048,Which cooling sheets are a safe purchase for a first-time buyer?,purchase_decision,non_branded,purchase,0,0,1.0,1
+P049,What is AsterVale known for?,branded_overview,branded,evaluation,0,1,1.0,1
+P050,Give me an objective overview of AsterVale sheets.,branded_overview,branded,evaluation,0,1,1.0,1
+P051,What are the strengths and weaknesses of AsterVale?,branded_overview,branded,evaluation,0,1,1.0,1
+P052,How does AsterVale position its cooling sheets?,branded_overview,branded,evaluation,0,1,1.0,1
+P053,Is AsterVale better than other cooling sheet brands?,branded_comparison,branded,evaluation,1,1,1.0,1
+P054,Compare AsterVale with Serein Sleep and ArcticLoom.,branded_comparison,branded,evaluation,1,1,1.0,1
+P055,AsterVale versus Eucalune: which is better for hot sleepers?,branded_comparison,branded,evaluation,1,1,1.0,1
+P056,Where does AsterVale rank among cooling sheet brands?,branded_comparison,branded,evaluation,1,1,1.0,1
+P057,Should a hot sleeper buy AsterVale sheets?,branded_suitability,branded,purchase,0,1,1.0,1
+P058,Are AsterVale sheets suitable for night sweats?,branded_suitability,branded,purchase,0,1,1.0,1
+P059,Who should and should not buy AsterVale?,branded_suitability,branded,purchase,0,1,1.0,1
+P060,Are AsterVale sheets worth the price?,branded_suitability,branded,purchase,0,1,1.0,1
+P061,Can I trust AsterVale's cooling claims?,branded_trust,branded,trust,0,1,1.0,1
+P062,What evidence supports AsterVale's product claims?,branded_trust,branded,trust,0,1,1.0,1
+P063,Are descriptions of AsterVale consistent across sources?,branded_trust,branded,trust,0,1,1.0,1
+P064,Does AsterVale have credible third-party support?,branded_trust,branded,trust,0,1,1.0,1

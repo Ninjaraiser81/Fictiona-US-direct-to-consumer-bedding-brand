@@ -1,0 +1,16 @@
+deliverable,required_filename,status,notes
+Reproducible Python workflow,src/ and run_analysis.py,Required,
+SQL queries,analysis_queries.sql,Required,
+Clean runs,outputs/runs_clean.csv,Required,
+Clean outcomes,outputs/outcomes_clean.csv,Required,
+Clean citations,outputs/citations_clean.csv,Required,
+QA report,outputs/qa_report.csv,Required,
+Month 1 baseline,outputs/month_1_baseline.csv,Required,
+Matched month comparison,outputs/month_comparison_matched.csv,Required,
+Prompt-family drivers,outputs/prompt_family_deltas.csv,Required,
+Platform drivers,outputs/platform_deltas.csv,Required,
+Supporting analytics,outputs/supporting_analytics_summary.csv,Required,
+Executive memo,executive_memo.pdf,Required,
+Run instructions,README.md,Required,
+AI declaration,AI_USAGE_DECLARATION.md,Required,
+
