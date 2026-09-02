@@ -1,0 +1,7 @@
+services:
+  analysis:
+    build: .
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: python run_analysis.py
