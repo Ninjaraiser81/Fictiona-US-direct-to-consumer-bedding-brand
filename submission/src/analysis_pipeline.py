@@ -804,7 +804,7 @@ ORDER BY audit_month
         c.setFillColor(colors.HexColor('#526575'))
         c.setFont('Times-Roman', 7.5)
         c.drawString(54, 22, 'AsterVale audit | Documentary brief | Directional evidence, not causal proof')
-        c.drawRightString(page_width - 54, 22, f'Page {page_number} of 5')
+        c.drawRightString(page_width - 54, 22, f'Page {page_number} of 3')
         c.showPage()
 
     draw_page(1, 'AsterVale Audit | Documentary Brief', [
@@ -882,38 +882,6 @@ ORDER BY audit_month
         ])
     ])
 
-    draw_page(4, 'AsterVale Audit | Supporting Evidence', [
-        ('Supporting analytics context', [
-            'GSC and GA4 results are directional context only. They describe search visibility and site outcomes, but do not establish that any deployed fix caused a change.',
-            'Monthly GSC non-branded impressions increased from 3,545 in 2026-06 to 4,893 in 2026-07; clicks increased from 146 to 229. Monthly GA4 sessions increased from 567 to 794 and conversions from 12 to 24.',
-            'The page-level view separates the cooling guide, comparison page, and cooling product page so Month 3 teams can monitor the content routes most relevant to the audit findings.'
-        ]),
-        ('Fix assessment detail', [
-            'F01 Entity and company-fact cleanup: consistent_with_improvement; branded presence quality and target recommendations improved in the matched evidence.',
-            'F02 Cooling Sheets Guide: consistent_with_improvement; target discovery and owned-citation signals improved in the matched evidence.',
-            'F03 Cooling-brand comparison page: consistent_with_improvement; comparison standing and target recommendation movement improved.',
-            'F04 Product claim and evidence refresh: consistent_with_improvement; branded quality and recommendation movement improved, while owned citation movement was flat.',
-            'F05 Internal-linking and hub navigation: consistent_with_improvement; category presence improved, but owned citation movement was flat.',
-            'F06 Independent expert-roundup outreach and F07 Night-sweats FAQ expansion: not_evaluable_month_2 because deployment timing or partial rollout prevented a fair Month 2 evaluation.',
-            'These classifications indicate consistency with observed movement only; they do not claim causation.'
-        ])
-    ])
-
-    draw_page(5, 'AsterVale Audit | Method and Decision Rules', [
-        ('Analytical controls', [
-            'The trusted dataset deduplicates run_id by latest ingested_at, keeps locked prompts and approved platforms/replicates, requires successful runs, and requires exactly one valid outcome for each of the five canonical brands.',
-            'Outcome hierarchy is validated from mentioned to shortlisted to recommended to top_choice. Mentioned brands must have unique ranks 1-5; unmentioned brands must have no rank. Structurally invalid runs are excluded.',
-            'Citation URLs are canonicalized by scheme/host/path/query rules, tracking parameters are removed, duplicate canonical citations are collapsed, and owned status is determined from the canonical brand domain.'
-        ]),
-        ('How to read the scorecard', [
-            'Absolute percentage-point movement is the primary evidence for practical change. Relative change is reported for context and can look large when the Month 1 base is weak; a zero Month 1 base has no defined relative change.',
-            'Month 1 and Month 2 movement uses only the intersection of eligible prompt_id + platform + replicate cells. Missing cells are not imputed.',
-            'The full reproducible artifacts are available in outputs/: baseline, matched comparison, prompt-family drivers, platform drivers, fix assessment, next-sprint plan, QA report, and supporting analytics summary.'
-        ]),
-        ('Decision takeaway', [
-            'AsterVale achieved meaningful Month 2 visibility gains, but the next operating challenge is converting visibility into recommendation through stronger owned proof, comparison evidence, and targeted content for stagnant high-intent segments.'
-        ])
-    ])
     c.save()
 
     # AI declaration
