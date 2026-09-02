@@ -1,0 +1,8 @@
+qa_measure,value
+raw_run_records_total,783
+deduped_run_records_total,773
+success_run_records,764
+out_of_scope_excluded,6
+non_success_excluded,9
+invalid_outcome_excluded,87
+valid_eligible_run_ids,672

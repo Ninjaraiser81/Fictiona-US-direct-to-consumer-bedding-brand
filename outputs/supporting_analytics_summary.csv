@@ -1,0 +1,13 @@
+analysis_scope,audit_month,query_type,landing_page,page_type,impressions,clicks,ctr_pct,sessions,engaged_sessions,conversions,revenue_usd
+gsc_query_type,2026-06,branded,,,1925,225,11.6883,,,,
+gsc_query_type,2026-06,non_branded,,,3545,146,4.1185,,,,
+gsc_query_type,2026-07,branded,,,2402,296,12.3231,,,,
+gsc_query_type,2026-07,non_branded,,,4893,229,4.6802,,,,
+gsc_non_branded_page_type,2026-06,non_branded,/compare/cooling-sheet-brands,comparison,162,5,3.0864,,,,
+gsc_non_branded_page_type,2026-06,non_branded,/guides/cooling-sheets,guide,274,10,3.6496,,,,
+gsc_non_branded_page_type,2026-06,non_branded,/products/cooling-sheet-set,product,970,34,3.5052,,,,
+gsc_non_branded_page_type,2026-07,non_branded,/compare/cooling-sheet-brands,comparison,468,24,5.1282,,,,
+gsc_non_branded_page_type,2026-07,non_branded,/guides/cooling-sheets,guide,654,27,4.1284,,,,
+gsc_non_branded_page_type,2026-07,non_branded,/products/cooling-sheet-set,product,1365,56,4.1026,,,,
+ga4_monthly_total,2026-06,all,,,,,,567.0000,349.0000,12.0000,1992.6800
+ga4_monthly_total,2026-07,all,,,,,,794.0000,507.0000,24.0000,4073.4700

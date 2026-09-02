@@ -1,0 +1,4 @@
+platform,segment,eligible_runs_m1,eligible_runs_m2,mentioned_rate_m1,mentioned_rate_m2,mentioned_rate_delta_pp,mentioned_rate_relative_change_pct,mentioned_movement,recommended_rate_m1,recommended_rate_m2,recommended_rate_delta_pp,recommended_rate_relative_change_pct,recommended_movement
+AnswerMind,AnswerMind,92,92,36.9565,42.3913,5.4348,14.7059,improvement,13.0435,17.3913,4.3478,33.3333,improvement
+ChatAssist,ChatAssist,100,100,38.0000,49.0000,11.0000,28.9474,improvement,11.0000,17.0000,6.0000,54.5455,improvement
+SearchAI,SearchAI,99,99,37.3737,58.5859,21.2121,56.7568,improvement,13.1313,21.2121,8.0808,61.5385,improvement
