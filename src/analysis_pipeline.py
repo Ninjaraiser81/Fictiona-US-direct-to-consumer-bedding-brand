@@ -737,7 +737,38 @@ ORDER BY audit_month
     c = canvas.Canvas(str(memo_path), pagesize=letter)
     page_width, page_height = letter
 
-    def draw_page(page_number, title, sections):
+    def draw_grouped_bar_chart(title, labels, series, x, y, width, height, maximum=None):
+        c.setFillColor(colors.HexColor('#17324D'))
+        c.setFont('Helvetica-Bold', 9)
+        c.drawString(x, y + height + 12, title)
+        chart_x = x + 132
+        chart_y = y + 12
+        chart_width = width - 145
+        row_height = max(18, (height - 20) / max(len(labels), 1))
+        max_value = maximum or max(max(values) for values in series.values()) or 1
+        colors_for_series = [colors.HexColor('#2A9D8F'), colors.HexColor('#E76F51')]
+        c.setFont('Helvetica', 7)
+        for row_index, label in enumerate(labels):
+            row_y = chart_y + height - (row_index + 1) * row_height
+            c.setFillColor(colors.HexColor('#526575'))
+            c.drawRightString(chart_x - 8, row_y + 3, label[:21])
+            for series_index, series_name in enumerate(series):
+                value = series[series_name][row_index]
+                bar_y = row_y + series_index * 7
+                bar_width = chart_width * max(value, 0) / max_value
+                c.setFillColor(colors_for_series[series_index % len(colors_for_series)])
+                c.rect(chart_x, bar_y, bar_width, 5, fill=1, stroke=0)
+                c.setFillColor(colors.HexColor('#526575'))
+                c.drawString(chart_x + bar_width + 3, bar_y - 1, f'{value:.1f}')
+        legend_x = chart_x
+        for series_index, series_name in enumerate(series):
+            c.setFillColor(colors_for_series[series_index % len(colors_for_series)])
+            c.rect(legend_x, y - 2, 7, 7, fill=1, stroke=0)
+            c.setFillColor(colors.HexColor('#526575'))
+            c.drawString(legend_x + 10, y, series_name)
+            legend_x += 52
+
+    def draw_page(page_number, title, sections, chart=None):
         c.setFillColor(colors.HexColor('#17324D'))
         c.rect(0, page_height - 58, page_width, 58, fill=1, stroke=0)
         c.setFillColor(colors.white)
@@ -745,6 +776,9 @@ ORDER BY audit_month
         c.drawString(54, page_height - 36, title)
         c.setFillColor(colors.HexColor('#17324D'))
         y = page_height - 82
+        if chart:
+            chart(y - 198)
+            y -= 220
         for heading, paragraphs in sections:
             c.setFont('Helvetica-Bold', 10.5)
             c.drawString(54, y, heading)
@@ -791,7 +825,14 @@ ORDER BY audit_month
             metric_text('Comparison Standing'),
             'Relative gains are strongest where the M1 base was small. Absolute percentage-point movement is the primary interpretation; relative change is context, not a substitute for scale.'
         ])
-    ])
+    ], chart=lambda chart_y: draw_grouped_bar_chart(
+        'Core score movement | 0-100 scale',
+        ['Category Presence', 'AI Share of Voice', 'Comparison Standing', 'Branded Recommendation', 'Final ASV Score'],
+        {
+            'M1': [comparison_lookup['Category Presence']['M1'], comparison_lookup['AI Share of Voice']['M1'], comparison_lookup['Comparison Standing']['M1'], comparison_lookup['Branded Recommendation Rate']['M1'], comparison_lookup['Final ASV Score']['M1']],
+            'M2': [comparison_lookup['Category Presence']['M2'], comparison_lookup['AI Share of Voice']['M2'], comparison_lookup['Comparison Standing']['M2'], comparison_lookup['Branded Recommendation Rate']['M2'], comparison_lookup['Final ASV Score']['M2']],
+        }, 54, chart_y, 500, 170, 100
+    ))
 
     draw_page(2, 'AsterVale Audit | Evidence and Constraints', [
         ('4. Where the Change Came From', [
@@ -807,7 +848,24 @@ ORDER BY audit_month
             f"The clearest constraint is proof-to-recommendation conversion: Branded Recommendation Rate reached {comparison_lookup['Branded Recommendation Rate']['M2']:.4f}, but Branded Owned Citation Rate remained {comparison_lookup['Branded Owned Citation Rate']['M2']:.4f}.",
             'In non-branded discovery, Category Presence improved substantially, while category_best and purchase_decision recommendation rates declined. Visibility is therefore ahead of decision-ready evidence and owned proof.'
         ])
-    ])
+    ], chart=lambda chart_y: (
+        draw_grouped_bar_chart(
+            'Largest prompt-family mention improvements | percentage points',
+            ['hot_sleepers', 'eco_friendly', 'care_durability'],
+            {
+                'M1': [family_lookup[name]['mentioned_rate_m1'] for name in ['hot_sleepers', 'eco_friendly', 'care_durability']],
+                'M2': [family_lookup[name]['mentioned_rate_m2'] for name in ['hot_sleepers', 'eco_friendly', 'care_durability']],
+            }, 54, chart_y + 95, 500, 75, 100
+        ),
+        draw_grouped_bar_chart(
+            'Platform mention movement | percentage points',
+            ['AnswerMind', 'ChatAssist', 'SearchAI'],
+            {
+                'M1': [platform_lookup[name]['mentioned_rate_m1'] for name in ['AnswerMind', 'ChatAssist', 'SearchAI']],
+                'M2': [platform_lookup[name]['mentioned_rate_m2'] for name in ['AnswerMind', 'ChatAssist', 'SearchAI']],
+            }, 54, chart_y - 5, 500, 75, 100
+        )
+    ))
 
     draw_page(3, 'AsterVale Audit | Month 3 Operating Plan', [
         ('7. Month 3 Priorities', [
