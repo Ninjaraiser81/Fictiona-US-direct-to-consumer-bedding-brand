@@ -739,7 +739,7 @@ ORDER BY audit_month
 
     def draw_grouped_bar_chart(title, labels, series, x, y, width, height, maximum=None):
         c.setFillColor(colors.HexColor('#17324D'))
-        c.setFont('Helvetica-Bold', 9)
+        c.setFont('Times-Bold', 9)
         c.drawString(x, y + height + 12, title)
         chart_x = x + 132
         chart_y = y + 12
@@ -747,7 +747,7 @@ ORDER BY audit_month
         row_height = max(18, (height - 20) / max(len(labels), 1))
         max_value = maximum or max(max(values) for values in series.values()) or 1
         colors_for_series = [colors.HexColor('#2A9D8F'), colors.HexColor('#E76F51')]
-        c.setFont('Helvetica', 7)
+        c.setFont('Times-Roman', 7)
         for row_index, label in enumerate(labels):
             row_y = chart_y + height - (row_index + 1) * row_height
             c.setFillColor(colors.HexColor('#526575'))
@@ -772,7 +772,7 @@ ORDER BY audit_month
         c.setFillColor(colors.HexColor('#17324D'))
         c.rect(0, page_height - 58, page_width, 58, fill=1, stroke=0)
         c.setFillColor(colors.white)
-        c.setFont('Helvetica-Bold', 16)
+        c.setFont('Times-Bold', 16)
         c.drawString(54, page_height - 36, title)
         c.setFillColor(colors.HexColor('#17324D'))
         y = page_height - 82
@@ -780,16 +780,16 @@ ORDER BY audit_month
             chart(y - 198)
             y -= 220
         for heading, paragraphs in sections:
-            c.setFont('Helvetica-Bold', 10.5)
+            c.setFont('Times-Bold', 10.5)
             c.drawString(54, y, heading)
             y -= 15
-            c.setFont('Helvetica', 8.8)
+            c.setFont('Times-Roman', 8.8)
             for paragraph in paragraphs:
                 words = paragraph.split()
                 line = ''
                 for word in words:
                     candidate = f'{line} {word}'.strip()
-                    if c.stringWidth(candidate, 'Helvetica', 8.8) > 500:
+                    if c.stringWidth(candidate, 'Times-Roman', 8.8) > 500:
                         c.drawString(62, y, line)
                         y -= 11
                         line = word
@@ -802,22 +802,22 @@ ORDER BY audit_month
         c.setStrokeColor(colors.HexColor('#B9C7D3'))
         c.line(54, 35, page_width - 54, 35)
         c.setFillColor(colors.HexColor('#526575'))
-        c.setFont('Helvetica', 7.5)
-        c.drawString(54, 22, 'AsterVale audit | Directional evidence; matched movement is not causal proof')
+        c.setFont('Times-Roman', 7.5)
+        c.drawString(54, 22, 'AsterVale audit | Documentary brief | Directional evidence, not causal proof')
         c.drawRightString(page_width - 54, 22, f'Page {page_number} of 5')
         c.showPage()
 
-    draw_page(1, 'AsterVale Audit | Executive Memo', [
-        ('1. Executive Summary', [
+    draw_page(1, 'AsterVale Audit | Documentary Brief', [
+        ('I. Executive Summary', [
             f"AsterVale's reliable Month 1 Final ASV Score was {baseline_lookup['Final ASV Score']:.4f}. On the matched cohort, Final ASV Score moved to {comparison_lookup['Final ASV Score']['M2']:.4f} ({comparison_lookup['Final ASV Score']['delta_pp']:+.4f} pp; {comparison_lookup['Final ASV Score']['relative_change_pct']:.4f}% relative).",
             'The business gained discovery and branded recommendation, but owned citation coverage and high-intent conversion remain the binding weaknesses.'
         ]),
-        ('2. Reliable Month 1 Baseline', [
+        ('II. Reliable Month 1 Baseline', [
             f"The baseline uses eligible Month 1 cells only. Category Presence was {baseline_lookup['Category Presence']:.4f}; AI Share of Voice was {baseline_lookup['AI Share of Voice']:.4f}; Comparison Standing was {baseline_lookup['Comparison Standing']:.4f}.",
             f"Branded Presence Quality was {baseline_lookup['Branded Presence Quality']:.4f}, Branded Recommendation Rate was {baseline_lookup['Branded Recommendation Rate']:.4f}, and Branded Prominence was {baseline_lookup['Branded Prominence']:.4f}.",
             'The baseline is reproducible from the cleaned, eligibility-filtered source data and is reported on a 0-100 scale.'
         ]),
-        ('3. What Genuinely Changed in Month 2', [
+        ('III. What Genuinely Changed in Month 2', [
             f"The movement comparison retains {len(matched_cells)} cells eligible in both months and matches prompt_id, platform, and replicate; missing cells were not imputed.",
             metric_text('Category Presence'),
             metric_text('Non-Branded Discovery Score'),
@@ -835,16 +835,16 @@ ORDER BY audit_month
     ))
 
     draw_page(2, 'AsterVale Audit | Evidence and Constraints', [
-        ('4. Where the Change Came From', [
+        ('IV. Where the Change Came From', [
             f"Largest matched prompt-family mention improvements were {family_text('hot_sleepers')}, {family_text('eco_friendly')}, and {family_text('care_durability')}.",
             f"The main family weaknesses were {family_text('category_best')} and {family_text('purchase_decision')}; both lost recommendation rate despite higher mentions.",
             f"Platform movement was led by SearchAI (+{platform_lookup['SearchAI']['mentioned_rate_delta_pp']:.2f} pp mentions; +{platform_lookup['SearchAI']['recommended_rate_delta_pp']:.2f} pp recommendations), followed by ChatAssist (+{platform_lookup['ChatAssist']['mentioned_rate_delta_pp']:.2f} pp mentions). No platform declined."
         ]),
-        ('5. Fix Assessment', [
+        ('V. Fix Assessment', [
             'F01-F05 were classified as consistent_with_improvement because their matched target segments and at least one intended metric improved. F06 and F07 were not_evaluable_month_2 because timing or partial rollout prevents a fair Month 2 evaluation.',
             'These are evidence-consistency judgments, not causal claims. The fix log, matched prompt-family movement, and intended metric movement are kept visible in outputs/fix_assessment.csv.'
         ]),
-        ('6. Remaining Binding Constraint', [
+        ('VI. Remaining Binding Constraint', [
             f"The clearest constraint is proof-to-recommendation conversion: Branded Recommendation Rate reached {comparison_lookup['Branded Recommendation Rate']['M2']:.4f}, but Branded Owned Citation Rate remained {comparison_lookup['Branded Owned Citation Rate']['M2']:.4f}.",
             'In non-branded discovery, Category Presence improved substantially, while category_best and purchase_decision recommendation rates declined. Visibility is therefore ahead of decision-ready evidence and owned proof.'
         ])
@@ -868,13 +868,13 @@ ORDER BY audit_month
     ))
 
     draw_page(3, 'AsterVale Audit | Month 3 Operating Plan', [
-        ('7. Month 3 Priorities', [
+        ('VII. Month 3 Priorities', [
             '1. Strengthen branded proof and owned citations: add canonical facts, supported cooling claims, care guidance, and internal links; track branded owned citation and recommendation rates.',
             '2. Convert discovery into recommendation: improve category_best and purchase_decision content with comparison tables, value proof, and suitability qualifiers; track non-branded recommendation rate by family.',
             '3. Improve comparison and shortlist proof: publish factual comparison criteria and trade-offs; track Comparison Standing plus brand_shortlist mention and recommendation rates.',
             '4. Address stagnant needs: create targeted content for couples_temperature and value_under_200; track positive recommendation movement without weakening mentions.'
         ]),
-        ('8. Recommended Audit-Process Improvements', [
+        ('VIII. Recommended Audit-Process Improvements', [
             'Keep a permanent QA ledger with raw count, deduped count, scope exclusions, non-success exclusions, incomplete five-brand runs, hierarchy failures, rank failures, and text-consistency failures by month.',
             'Freeze the matched-cell definition before analysis and publish M1/M2 eligible-cell counts, intersection counts, and excluded-cell reasons alongside every movement claim.',
             'Separate absolute percentage-point change from relative change, flag large relative changes from weak bases, and leave relative change undefined when M1 is zero.',
